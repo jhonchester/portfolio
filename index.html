@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A modern interactive portfolio for web development and analytics.">
+  <title>Jhon Chester M. Guijoba | Interactive Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas class="ambient-canvas" id="ambientCanvas" aria-hidden="true"></canvas>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#home" aria-label="Go to home">
+      <span class="brand-mark">JC</span>
+      <span>Portfolio</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button menu-button" type="button" data-menu-toggle aria-label="Open menu" title="Open menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-panel" data-mobile-panel>
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-showcase reveal" data-tilt>
+        <div class="hero-orb orb-top" aria-hidden="true"></div>
+        <div class="hero-star" aria-hidden="true"></div>
+        <div class="hero-panel">
+          <div class="hero-copy">
+            <p class="eyebrow">Web development and analytics</p>
+            <h1>I build modern websites and clear analytics <span>Jhon Chester M. Guijoba</span></h1>
+            <p class="hero-text">
+              Clean responsive websites, dashboard-ready interfaces, and practical insights that help people understand what is working online.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#contact">Discuss for projects</a>
+              <a class="button arrow-link" href="#work">View portfolio <span aria-hidden="true">-></span></a>
+            </div>
+          </div>
+          <div class="hero-media">
+            <div class="tech-cloud" aria-label="Programming languages and analytics tools">
+              <span>JS</span>
+              <span>PHP</span>
+              <span>SQL</span>
+              <span>Node.js</span>
+              <span>Python</span>
+              <span>C++</span>
+              <span>Java</span>
+              <span>C#</span>
+              <span>R</span>
+              <span>Power BI</span>
+              <span>Jupyter</span>
+              <span>Laravel</span>
+              <span>Tailwind</span>
+              <span>Bootstrap</span>
+              <span>Git</span>
+            </div>
+            <figure class="portrait-card">
+              <img src="assets/hero-portrait-cutout.png" alt="Portrait of Jhon Chester M. Guijoba">
+            </figure>
+            <div class="circle-badge" aria-label="Web analytics badge">
+              <span>Web Analytics</span>
+            </div>
+          </div>
+          <div class="hero-orb orb-bottom" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-strip reveal" aria-label="Portfolio highlights">
+      <div>
+        <strong data-counter="5">0</strong>
+        <span>Years of learning & development</span>
+      </div>
+      <div>
+        <strong data-counter="9">0</strong>
+        <span>Academic projects completed</span>
+      </div>
+      <div>
+        <strong data-counter="7">0</strong>
+        <span>Client-based systems developed</span>
+      </div>
+      <div>
+        <strong data-counter="18">0</strong>
+        <span>Technologies used</span>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Selected projects</p>
+        <h2>Work that balances clean development, clear data, and speed.</h2>
+      </div>
+
+      <div class="filter-bar reveal" aria-label="Project filters">
+        <button class="filter active" type="button" data-filter="all">All</button>
+        <button class="filter" type="button" data-filter="web">Web</button>
+        <button class="filter" type="button" data-filter="system">Systems</button>
+        <button class="filter" type="button" data-filter="commerce">Commerce</button>
+        <button class="filter" type="button" data-filter="research">Research</button>
+      </div>
+
+      <div class="project-grid">
+        <button class="project-card reveal" type="button" data-category="system" data-project="migrant">
+          <div class="project-media media-e">
+            <img src="assets/projects/migrant/1.png" alt="Migrant System preview" loading="lazy">
+            <span>01</span>
+            <small>View images</small>
+          </div>
+          <div class="project-content">
+            <p>Information System</p>
+            <h3>Migrant System</h3>
+            <span>A web-based system for managing migrant-related records, data organization, and reporting needs.</span>
+          </div>
+        </button>
+
+        <button class="project-card reveal" type="button" data-category="system" data-project="scholarship">
+          <div class="project-media media-c">
+            <img src="assets/projects/scholarship/1.png" alt="Scholarship Management System preview" loading="lazy">
+            <span>02</span>
+            <small>View images</small>
+          </div>
+          <div class="project-content">
+            <p>Management System</p>
+            <h3>Scholarship Management System</h3>
+            <span>A system for organizing scholarship records, applicants, status tracking, and administrative workflows.</span>
+          </div>
+        </button>
+
+        <button class="project-card reveal" type="button" data-category="research" data-project="webxr">
+          <div class="project-media media-d">
+            <img src="assets/projects/webxr/1.png" alt="WebXR Haptics Gloves preview" loading="lazy">
+            <span>03</span>
+            <small>View images</small>
+          </div>
+          <div class="project-content">
+            <p>WebXR Research</p>
+            <h3>WebXR Haptics Gloves</h3>
+            <span>An immersive interaction project exploring WebXR experiences and haptic glove feedback.</span>
+          </div>
+        </button>
+
+        <button class="project-card reveal" type="button" data-category="commerce" data-project="spartan-commerce">
+          <div class="project-media media-b">
+            <img src="assets/projects/spartan-commerce/s1.png" alt="Spartan Commerce preview" loading="lazy">
+            <span>04</span>
+            <small>View images</small>
+          </div>
+          <div class="project-content">
+            <p>E-commerce</p>
+            <h3>Spartan Commerce</h3>
+            <span>An online commerce project focused on product browsing, transactions, and business-ready flow.</span>
+          </div>
+        </button>
+
+        <button class="project-card reveal" type="button" data-category="web" data-project="mahika">
+          <div class="project-media media-a">
+            <img src="assets/projects/mahika/1.png" alt="Mahika preview" loading="lazy">
+            <span>05</span>
+            <small>View images</small>
+          </div>
+          <div class="project-content">
+            <p>Web Project</p>
+            <h3>Mahika</h3>
+            <span>A modern web experience built for clear presentation, smooth navigation, and responsive use.</span>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <dialog class="project-modal" data-project-modal>
+      <button class="modal-close" type="button" data-modal-close aria-label="Close project details">Close</button>
+      <div class="modal-media" data-modal-media>
+        <span data-modal-number>01</span>
+      </div>
+      <div class="modal-content">
+        <p data-modal-type>Web Project</p>
+        <h3 data-modal-title>Mahika</h3>
+        <span data-modal-description></span>
+        <div class="modal-tools" data-modal-tools></div>
+        <div class="photo-gallery" data-photo-gallery aria-label="Project photo descriptions"></div>
+      </div>
+    </dialog>
+
+    <section class="section services-section" id="services">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Services</p>
+        <h2>Everything needed to build, measure, and improve a digital presence.</h2>
+      </div>
+
+      <div class="service-list">
+        <button class="service-row reveal active" type="button" data-service="strategy">
+          <span>01</span>
+          <strong>Web strategy</strong>
+          <small>Site structure, user flows, and content direction.</small>
+        </button>
+        <button class="service-row reveal" type="button" data-service="design">
+          <span>02</span>
+          <strong>Analytics setup</strong>
+          <small>Dashboards, tracking plans, and performance views.</small>
+        </button>
+        <button class="service-row reveal" type="button" data-service="build">
+          <span>03</span>
+          <strong>Web development</strong>
+          <small>Fast, accessible, and responsive web experiences.</small>
+        </button>
+      </div>
+
+      <aside class="service-preview reveal" data-service-preview>
+        <p>Web strategy</p>
+        <h3>Start with a site that is clear, useful, and measurable.</h3>
+        <span>Strong structure makes the website easier to use and gives analytics a cleaner story to tell.</span>
+      </aside>
+    </section>
+
+    <section class="section process-section" id="process">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Process</p>
+        <h2>A focused path from idea to launch.</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span>Discover</span>
+          <p>Define audience, goals, constraints, references, and the strongest version of the offer.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span>Design</span>
+          <p>Build responsive screens, content sections, data views, and interaction details.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span>Develop</span>
+          <p>Turn the plan into a fast, accessible, production-ready website with clean frontend code.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span>Launch</span>
+          <p>Review content, test devices, tune performance, and prepare a confident release.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Have a project in mind?</h2>
+        <p>Send a quick note and this form will prepare a polished mail draft with your message.</p>
+        <div class="contact-links">
+          <a href="mailto:jhonchesterguijoba186@gmail.com">jhonchesterguijoba186@gmail.com</a>
+          <a href="https://www.linkedin.com/in/jhon-chester-guijoba/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/jhonchester" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" data-contact-form>
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          Project type
+          <select name="type">
+            <option>Website design</option>
+            <option>Frontend development</option>
+            <option>Brand refresh</option>
+            <option>Analytics dashboard</option>
+          </select>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" placeholder="Tell me what you want to build..." required></textarea>
+        </label>
+        <button class="button primary" type="submit">Prepare email</button>
+        <p class="form-status" data-form-status aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Designed and built by Jhon Chester M. Guijoba</span>
+    <a href="#home">Back to top</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
