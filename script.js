@@ -28,19 +28,19 @@ const context = canvas.getContext("2d");
 
 const services = {
   strategy: {
-    label: "Web strategy",
+    label: "Orbit planning",
     title: "Start with a site that is clear, useful, and measurable.",
-    body: "Strong structure makes the website easier to use and gives analytics a cleaner story to tell."
+    body: "Strong structure keeps every page, action, and metric moving in the same direction."
   },
   design: {
-    label: "Analytics setup",
+    label: "Signal tracking",
     title: "Turn activity into insight people can act on.",
-    body: "Dashboards, events, and performance views help reveal what users do and where the experience can improve."
+    body: "Dashboards, events, and performance views reveal the signals that show where the experience can improve."
   },
   build: {
-    label: "Web development",
+    label: "Launch build",
     title: "Build a fast website with clean frontend code.",
-    body: "The final site is responsive, accessible, and tuned for the details that make everyday use feel effortless."
+    body: "The final site is responsive, accessible, and tuned so every screen feels ready for real use."
   }
 };
 

@@ -11,7 +11,7 @@ const textureBase = "assets/planet textures/";
 const planets = [
   {
     name: "Mercury",
-    text: "Fresh IT Graduate passionate about system development",
+    text: "System development: I build practical web systems with clear structure and user-focused workflows.",
     color: 0xb8a391,
     textureUrl: `${textureBase}2k_mercury.jpg`,
     texture: "rock",
@@ -21,7 +21,7 @@ const planets = [
   },
   {
     name: "Venus",
-    text: "Skilled in Laravel, Bootstrap, and database design",
+    text: "Frontend UI: I create responsive layouts with HTML, CSS, Bootstrap, Tailwind, and clean interaction details.",
     color: 0xd8a657,
     textureUrl: `${textureBase}2k_venus_surface.jpg`,
     texture: "cloud",
@@ -31,7 +31,7 @@ const planets = [
   },
   {
     name: "Earth",
-    text: "Developed Migrant Information System with RBAC for Municipality of Malvar",
+    text: "Real-world systems: I develop tools for records, municipal workflows, and organized project operations.",
     color: 0x245cff,
     textureUrl: `${textureBase}2k_earth_daymap.jpg`,
     nightUrl: `${textureBase}2k_earth_nightmap.jpg`,
@@ -44,7 +44,7 @@ const planets = [
   },
   {
     name: "Mars",
-    text: "Built Scholarship Management System with secure role-based access",
+    text: "Access control: I design RBAC flows for admins, staff, and assigned users so data stays properly scoped.",
     color: 0xee6f57,
     textureUrl: `${textureBase}2k_mars.jpg`,
     texture: "rock",
@@ -54,7 +54,7 @@ const planets = [
   },
   {
     name: "Jupiter",
-    text: "Experienced in system architecture, data encoding, and IT support",
+    text: "Core skills: Laravel, Bootstrap, RBAC, database design, system architecture, dashboards, WebXR, and IT support.",
     color: 0xd2b48c,
     textureUrl: `${textureBase}2k_jupiter.jpg`,
     texture: "bands",
@@ -64,7 +64,7 @@ const planets = [
   },
   {
     name: "Saturn",
-    text: "Capstone: WebXR with Haptic Gloves for immersive interaction",
+    text: "Immersive research: I explore WebXR experiences, haptic glove interaction, and 3D learning environments.",
     color: 0xf0c879,
     textureUrl: `${textureBase}2k_saturn.jpg`,
     ringUrl: `${textureBase}2k_saturn_ring_alpha.png`,
@@ -75,7 +75,7 @@ const planets = [
   },
   {
     name: "Uranus",
-    text: "Detail-oriented, adaptable, and fast learner",
+    text: "Adaptability: I learn fast across tools, troubleshoot issues, document work, and adjust to project needs.",
     color: 0x55d6be,
     textureUrl: `${textureBase}2k_uranus.jpg`,
     texture: "ice",
@@ -85,7 +85,7 @@ const planets = [
   },
   {
     name: "Neptune",
-    text: "Aspiring developer eager to build impactful solutions",
+    text: "Growth mindset: I keep improving toward polished, useful, secure, and impactful digital solutions.",
     color: 0x7b2dff,
     textureUrl: `${textureBase}2k_neptune.jpg`,
     texture: "storm",
@@ -241,6 +241,7 @@ if (canvas) {
   const planetMeshes = [];
   const planetGroup = new THREE.Group();
   const orbitGroup = new THREE.Group();
+  const planetScale = 0.78;
 
   let activeIndex = 0;
   let hoveredPlanet = null;
@@ -341,6 +342,7 @@ if (canvas) {
     const angle = (index / planets.length) * Math.PI * 2 - Math.PI * 0.35;
     const x = Math.cos(angle) * planet.orbit;
     const z = Math.sin(angle) * planet.orbit;
+    const displaySize = planet.size * planetScale;
 
     const orbit = new THREE.Mesh(
       new THREE.RingGeometry(planet.orbit - 0.006, planet.orbit + 0.006, 160),
@@ -384,9 +386,9 @@ if (canvas) {
       material.emissiveIntensity = 0.32;
       material.needsUpdate = true;
     });
-    const mesh = new THREE.Mesh(new THREE.SphereGeometry(planet.size, 48, 48), material);
+    const mesh = new THREE.Mesh(new THREE.SphereGeometry(displaySize, 48, 48), material);
     mesh.position.set(x, 0, z);
-    mesh.userData = { index, baseSize: planet.size, basePosition: mesh.position.clone() };
+    mesh.userData = { index, baseSize: displaySize, basePosition: mesh.position.clone() };
     planetGroup.add(mesh);
 
     if (planet.name === "Saturn") {
@@ -401,7 +403,7 @@ if (canvas) {
         ringMaterial.needsUpdate = true;
       });
       const ring = new THREE.Mesh(
-        new THREE.RingGeometry(planet.size * 1.3, planet.size * 1.9, 96),
+        new THREE.RingGeometry(displaySize * 1.3, displaySize * 1.9, 96),
         ringMaterial
       );
       ring.rotation.x = Math.PI * 0.58;
@@ -423,7 +425,7 @@ if (canvas) {
         cloudMaterial.needsUpdate = true;
       });
       const cloudLayer = new THREE.Mesh(
-        new THREE.SphereGeometry(planet.size * 1.018, 48, 48),
+        new THREE.SphereGeometry(displaySize * 1.018, 48, 48),
         cloudMaterial
       );
       cloudLayer.userData = { rotationSpeed: planet.name === "Venus" ? 0.0028 : 0.0038 };
@@ -431,7 +433,7 @@ if (canvas) {
     }
 
     const atmosphereColor = planet.name === "Earth" ? 0x55d6ff : planet.name === "Venus" ? 0xffd79b : planet.color;
-    const atmosphere = makeAtmosphere(planet.size * 1.08, atmosphereColor, planet.name === "Earth" || planet.name === "Venus" ? 0.38 : 0.16);
+    const atmosphere = makeAtmosphere(displaySize * 1.08, atmosphereColor, planet.name === "Earth" || planet.name === "Venus" ? 0.34 : 0.14);
     mesh.add(atmosphere);
 
     planetMeshes.push(mesh);
@@ -455,9 +457,9 @@ if (canvas) {
 
     targetLookAt.copy(planetPosition);
     targetCamera.copy(planetPosition)
-      .add(direction.multiplyScalar(3.45))
-      .add(side.multiplyScalar(1.15))
-      .add(new THREE.Vector3(0, 1.15, 0));
+      .add(direction.multiplyScalar(4.85))
+      .add(side.multiplyScalar(1.35))
+      .add(new THREE.Vector3(0, 1.35, 0));
 
     updateText();
   }
@@ -518,7 +520,7 @@ if (canvas) {
       const isHovered = mesh === hoveredPlanet;
       const base = mesh.userData.basePosition;
       const float = Math.sin(seconds * 1.4 + index) * 0.08;
-      const targetScale = isActive ? 1.34 : isHovered ? 1.14 : 1;
+      const targetScale = isActive ? 1.14 : isHovered ? 1.08 : 1;
 
       mesh.position.y = float;
       mesh.rotation.y += 0.006 + index * 0.0008;
