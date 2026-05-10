@@ -4,6 +4,9 @@ const reveals = document.querySelectorAll(".reveal");
 const counters = document.querySelectorAll("[data-counter]");
 const filterButtons = document.querySelectorAll("[data-filter]");
 const projectCards = document.querySelectorAll("[data-category]");
+const planets = document.querySelectorAll("[data-planet]");
+const planetLabel = document.querySelector("[data-planet-label]");
+const planetPhrase = document.querySelector("[data-planet-phrase]");
 const serviceRows = document.querySelectorAll("[data-service]");
 const servicePreview = document.querySelector("[data-service-preview]");
 const contactForm = document.querySelector("[data-contact-form]");
@@ -38,6 +41,25 @@ const services = {
     label: "Web development",
     title: "Build a fast website with clean frontend code.",
     body: "The final site is responsive, accessible, and tuned for the details that make everyday use feel effortless."
+  }
+};
+
+const planetMessages = {
+  systems: {
+    label: "Systems",
+    phrase: "Efficient, secure, and user-friendly systems."
+  },
+  security: {
+    label: "RBAC",
+    phrase: "Controlled access for administrators, staff, and barangay personnel."
+  },
+  analytics: {
+    label: "Data",
+    phrase: "Clear records, organized documents, dashboards, and practical reporting."
+  },
+  growth: {
+    label: "Growth",
+    phrase: "Adaptable, detail-oriented, and committed to continuous learning."
   }
 };
 
@@ -211,6 +233,21 @@ filterButtons.forEach((button) => {
     projectCards.forEach((card) => {
       card.classList.toggle("is-hidden", filter !== "all" && card.dataset.category !== filter);
     });
+  });
+});
+
+planets.forEach((planet) => {
+  planet.addEventListener("click", () => {
+    const message = planetMessages[planet.dataset.planet];
+    if (!message) return;
+
+    planets.forEach((item) => item.classList.remove("active"));
+    planet.classList.add("active");
+
+    if (planetLabel && planetPhrase) {
+      planetLabel.textContent = message.label;
+      planetPhrase.textContent = message.phrase;
+    }
   });
 });
 
