@@ -28,17 +28,17 @@ const context = canvas.getContext("2d");
 
 const services = {
   strategy: {
-    label: "Orbit planning",
-    title: "Start with a site that is clear, useful, and measurable.",
-    body: "Strong structure keeps every page, action, and metric moving in the same direction."
+    label: "System architecture",
+    title: "Practical systems with clean flows and measurable outcomes.",
+    body: "Frontend, backend, records, dashboards, and interaction work connect into one reliable build path."
   },
   design: {
-    label: "Signal tracking",
+    label: "Analytics signal",
     title: "Turn activity into insight people can act on.",
     body: "Dashboards, events, and performance views reveal the signals that show where the experience can improve."
   },
   build: {
-    label: "Launch build",
+    label: "Frontend launch",
     title: "Build a fast website with clean frontend code.",
     body: "The final site is responsive, accessible, and tuned so every screen feels ready for real use."
   }
@@ -329,7 +329,7 @@ contactForm.addEventListener("submit", (event) => {
   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nProject type: ${type}\n\n${message}`);
 
   formStatus.textContent = "Opening your email app with a ready-to-send draft.";
-  window.location.href = `mailto:hello@example.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:jhonchesterguijoba186@gmail.com?subject=${subject}&body=${body}`;
 });
 
 if (tiltCard) {

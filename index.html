@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <canvas class="space-canvas" id="spaceCanvas" aria-hidden="true"></canvas>
   <canvas class="ambient-canvas" id="ambientCanvas" aria-hidden="true"></canvas>
 
   <header class="site-header" data-header>
@@ -22,8 +23,8 @@
 
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="#about">About me</a>
+      <a href="#skills">Skills</a>
       <a href="#work">Projects</a>
-      <a href="#services">Services</a>
       <a href="#process">Process</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -38,21 +39,25 @@
 
   <div class="mobile-panel" data-mobile-panel>
     <a href="#about">About me</a>
+    <a href="#skills">Skills</a>
     <a href="#work">Work</a>
-    <a href="#services">Services</a>
     <a href="#process">Process</a>
     <a href="#contact">Contact</a>
   </div>
 
   <main>
-    <section class="hero section" id="home">
+    <section class="hero section cosmic-section" id="home" data-cosmic-section="hero">
       <div class="hero-showcase reveal" data-tilt>
         <div class="hero-orb orb-top" aria-hidden="true"></div>
         <div class="hero-star" aria-hidden="true"></div>
         <div class="hero-panel">
           <div class="hero-copy">
-            <p class="eyebrow">Galaxy portfolio</p>
-            <h1>My work moves through one connected digital galaxy <span>Jhon Chester M. Guijoba</span></h1>
+            <p class="eyebrow">Solar portfolio</p>
+            <div class="planet-tag" data-planet-hover="hero">
+              <span>Solar core</span>
+              <strong>Sun sector</strong>
+            </div>
+            <h1>My work moves through one connected digital solar system <span>Jhon Chester M. Guijoba</span></h1>
             <p class="hero-text">
               Each orbit connects a skill, system, and project: frontend, backend, data, security, immersive work, and practical digital solutions.
             </p>
@@ -91,7 +96,7 @@
       </div>
     </section>
 
-    <section class="stats-strip reveal" aria-label="Portfolio highlights">
+    <section class="stats-strip reveal cosmic-section" aria-label="Portfolio highlights" data-cosmic-section="stats">
       <div>
         <strong data-counter="5">0</strong>
         <span>Years of learning & development</span>
@@ -110,36 +115,85 @@
       </div>
     </section>
 
-    <section class="section about-section" id="about">
+    <section class="section about-section cosmic-section" id="about" data-cosmic-section="about">
       <div class="section-heading reveal">
         <p class="eyebrow">About me</p>
-        <h2>A portfolio galaxy where every planet represents a skill, system, or project path.</h2>
+        <div class="planet-tag" data-planet-hover="about">
+          <span>Inner orbit interface</span>
+          <strong>Mission profile</strong>
+        </div>
+        <h2>Developer profile.</h2>
       </div>
 
       <div class="about-layout reveal">
         <article class="about-card">
-          <aside class="about-3d" aria-label="Interactive 3D solar system about me">
-            <div class="solar-canvas-wrap">
-              <canvas id="aboutSolarCanvas" aria-label="3D solar system with planets representing about me details"></canvas>
-              <div class="solar-controls" aria-label="Solar system navigation">
-                <button type="button" data-solar-prev aria-label="Previous planet"><span aria-hidden="true">&lsaquo;</span></button>
-                <button type="button" data-solar-next aria-label="Next planet"><span aria-hidden="true">&rsaquo;</span></button>
-              </div>
-              <div class="solar-info" aria-live="polite">
-                <span data-solar-index>01 / 08</span>
-                <h4 data-solar-name>Mercury</h4>
-                <p data-solar-text>System development: I build practical web systems with clear structure and user-focused workflows.</p>
-              </div>
-            </div>
-          </aside>
+          <div class="about-content">
+            <span class="about-kicker">Mission profile</span>
+            <h3>I build practical digital systems that connect people, records, interfaces, and insight.</h3>
+            <p>
+              I’m Jhon Chester M. Guijoba, a web developer focused on useful systems, responsive interfaces, analytics views, and project workflows that are easy to understand and maintain.
+            </p>
+            <p>
+              This portfolio is designed as one solar system: the Sun anchors the first impression, the inner orbit introduces who I am, and each following section moves through the skills, projects, process, and contact paths without breaking the cinematic flow.
+            </p>
+          </div>
+          <div class="about-skill-cloud" aria-label="Core skills">
+            <span>Frontend UI</span>
+            <span>Laravel</span>
+            <span>PHP</span>
+            <span>SQL</span>
+            <span>Analytics</span>
+            <span>RBAC</span>
+            <span>WebXR</span>
+            <span>Documentation</span>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="section work-section" id="work">
+    <section class="section services-section cosmic-section" id="skills" data-cosmic-section="skills">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Skill station</p>
+        <div class="planet-tag" data-planet-hover="skills">
+          <span>Mercury mechanical pass</span>
+          <strong>Skills orbit</strong>
+        </div>
+        <h2>From system design to user experience—built with purpose</h2>
+      </div>
+
+      <div class="service-list">
+        <button class="service-row reveal active" type="button" data-service="strategy" data-planet-hover="skills">
+          <span>01</span>
+          <strong>System architecture</strong>
+          <small>Site structure, database thinking, user flows, and clear admin workflows.</small>
+        </button>
+        <button class="service-row reveal" type="button" data-service="design" data-planet-hover="skills">
+          <span>02</span>
+          <strong>Analytics signal</strong>
+          <small>Dashboards, tracking plans, reporting views, and practical performance insight.</small>
+        </button>
+        <button class="service-row reveal" type="button" data-service="build" data-planet-hover="skills">
+          <span>03</span>
+          <strong>Frontend launch</strong>
+          <small>Fast, accessible, responsive interfaces with polished interaction details.</small>
+        </button>
+      </div>
+
+      <aside class="service-preview reveal" data-service-preview data-planet-hover="skills">
+        <p>System architecture</p>
+        <h3>Practical systems with clean flows and measurable outcomes.</h3>
+        <span>Frontend, backend, records, dashboards, and interaction work connect into one reliable build path.</span>
+      </aside>
+    </section>
+
+    <section class="section work-section cosmic-section" id="work" data-cosmic-section="projects">
       <div class="section-heading reveal">
         <p class="eyebrow">Project constellation</p>
-        <h2>Selected project grouped like constellations across systems, web, commerce, and research.</h2>
+        <div class="planet-tag" data-planet-hover="projects">
+          <span>Neptune cyber pass</span>
+          <strong>Projects orbit</strong>
+        </div>
+        <h2>Projects across systems, web, commerce, and research built with purpose.</h2>
       </div>
 
       <div class="filter-bar reveal" aria-label="Project filters">
@@ -151,7 +205,7 @@
       </div>
 
       <div class="project-grid">
-        <button class="project-card reveal" type="button" data-category="system" data-project="migrant">
+        <button class="project-card reveal" type="button" data-category="system" data-project="migrant" data-planet-hover="projects">
           <div class="project-media media-e">
             <img src="assets/projects/migrant/1.png" alt="Migrant System preview" loading="lazy">
             <span>01</span>
@@ -164,7 +218,7 @@
           </div>
         </button>
 
-        <button class="project-card reveal" type="button" data-category="system" data-project="scholarship">
+        <button class="project-card reveal" type="button" data-category="system" data-project="scholarship" data-planet-hover="projects">
           <div class="project-media media-c">
             <img src="assets/projects/scholarship/1.png" alt="Scholarship Management System preview" loading="lazy">
             <span>02</span>
@@ -177,7 +231,7 @@
           </div>
         </button>
 
-        <button class="project-card reveal" type="button" data-category="research" data-project="webxr">
+        <button class="project-card reveal" type="button" data-category="research" data-project="webxr" data-planet-hover="projects">
           <div class="project-media media-d">
             <img src="assets/projects/webxr/1.png" alt="WebXR Haptics Gloves preview" loading="lazy">
             <span>03</span>
@@ -190,7 +244,7 @@
           </div>
         </button>
 
-        <button class="project-card reveal" type="button" data-category="commerce" data-project="spartan-commerce">
+        <button class="project-card reveal" type="button" data-category="commerce" data-project="spartan-commerce" data-planet-hover="projects">
           <div class="project-media media-b">
             <img src="assets/projects/spartan-commerce/s1.png" alt="Spartan Commerce preview" loading="lazy">
             <span>04</span>
@@ -203,7 +257,7 @@
           </div>
         </button>
 
-        <button class="project-card reveal" type="button" data-category="web" data-project="mahika">
+        <button class="project-card reveal" type="button" data-category="web" data-project="mahika" data-planet-hover="projects">
           <div class="project-media media-a">
             <img src="assets/projects/mahika/1.png" alt="Mahika preview" loading="lazy">
             <span>05</span>
@@ -232,41 +286,14 @@
       </div>
     </dialog>
 
-    <section class="section services-section" id="services">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Service orbits</p>
-        <h2>Everything needed to launch, measure, and improve a digital presence.</h2>
-      </div>
-
-      <div class="service-list">
-        <button class="service-row reveal active" type="button" data-service="strategy">
-          <span>01</span>
-          <strong>Orbit planning</strong>
-          <small>Site structure, user flows, and content direction.</small>
-        </button>
-        <button class="service-row reveal" type="button" data-service="design">
-          <span>02</span>
-          <strong>Signal tracking</strong>
-          <small>Dashboards, tracking plans, and performance views.</small>
-        </button>
-        <button class="service-row reveal" type="button" data-service="build">
-          <span>03</span>
-          <strong>Launch build</strong>
-          <small>Fast, accessible, and responsive web experiences.</small>
-        </button>
-      </div>
-
-      <aside class="service-preview reveal" data-service-preview>
-        <p>Orbit planning</p>
-        <h3>Start with a site that is clear, useful, and measurable.</h3>
-        <span>Strong structure keeps every page, action, and metric moving in the same direction.</span>
-      </aside>
-    </section>
-
-    <section class="section process-section" id="process">
+    <section class="section process-section cosmic-section" id="process" data-cosmic-section="process">
       <div class="section-heading reveal">
         <p class="eyebrow">Launch path</p>
-        <h2>A focused route from first signal to finished launch.</h2>
+        <div class="planet-tag" data-planet-hover="process">
+          <span>Mars transfer route</span>
+          <strong>Process orbit</strong>
+        </div>
+        <h2>A focused journey from idea to deployment.</h2>
       </div>
 
       <div class="timeline">
@@ -289,9 +316,13 @@
       </div>
     </section>
 
-    <section class="section contact-section" id="contact">
+    <section class="section contact-section cosmic-section" id="contact" data-cosmic-section="contact">
       <div class="contact-copy reveal">
         <p class="eyebrow">Contact</p>
+        <div class="planet-tag" data-planet-hover="contact">
+          <span>Uranus outer signal</span>
+          <strong>Contact orbit</strong>
+        </div>
         <h2>Have a project in mind?</h2>
         <p>Send a quick note and this form will prepare a polished mail draft with your message.</p>
         <div class="contact-links">
@@ -334,7 +365,7 @@
     <a href="#home">Back to top</a>
   </footer>
 
-  <script type="module" src="about-solar.js"></script>
+  <script type="module" src="global-space.js?v=4"></script>
   <script src="script.js"></script>
 </body>
 </html>
